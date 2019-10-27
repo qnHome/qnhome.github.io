@@ -12,8 +12,10 @@ Dubbo+Zookeeper
 Zookeeper详谈
 
 中间件概念详述中间件的定义
+
 关于中间件的定义各有说辞，这里给出IDC的表述：
-&gt;中间件是一类独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术">
+
+中间件是一类独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -483,10 +485,12 @@ Zookeeper详谈
 <li>Dubbo+Zookeeper</li>
 <li>Zookeeper详谈</li>
 </ul>
-<h1 id="中间件概念详述"><a href="#中间件概念详述" class="headerlink" title="中间件概念详述"></a>中间件概念详述</h1><h2 id="中间件的定义"><a href="#中间件的定义" class="headerlink" title="中间件的定义"></a>中间件的定义</h2><img src="第一篇正文：关于中间件/中间件.png" width="60%" height="60%">
-关于中间件的定义各有说辞，这里给出IDC的表述：
->中间件是一类独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间分享资源，中间件位于客户机服务器的操作系统之上，管理计算资源和网络通信。
+<h1 id="中间件概念详述"><a href="#中间件概念详述" class="headerlink" title="中间件概念详述"></a>中间件概念详述</h1><h2 id="中间件的定义"><a href="#中间件的定义" class="headerlink" title="中间件的定义"></a>中间件的定义</h2><img src="中间件.png" width="60%" height="60%">
 
+<p>关于中间件的定义各有说辞，这里给出IDC的表述：</p>
+<blockquote>
+<p>中间件是一类独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间分享资源，中间件位于客户机服务器的操作系统之上，管理计算资源和网络通信。</p>
+</blockquote>
 <p>根据这一表述可知，中间件的作用是为处于自己上层的应用软件提供运行与开发环境，帮助用户灵活、高效地开发和集成复杂的应用软件的。</p>
 <h2 id="中间件的特点"><a href="#中间件的特点" class="headerlink" title="中间件的特点"></a>中间件的特点</h2><ul>
 <li>满足大量应用需要</li>
@@ -525,7 +529,7 @@ Zookeeper详谈
 <li>序列化和编组</li>
 <li>反序列化</li>
 </ul>
-<p>如下图所示<br><img src="第一篇正文：关于中间件/RPC.png" width="80%" height="80%"></p>
+<p>如下图所示<br><img src="RPC.png" width="80%" height="80%"></p>
 <blockquote>
 <p>客户端：寻址、打包序列化、发送、等待接受结果<br>服务端：接收、反序列化解包、调用方法并返回</p>
 </blockquote>
@@ -540,7 +544,7 @@ Zookeeper详谈
 <blockquote>
 <p>因此架构需要具有：注册中心、软负载均衡、故障切换、依赖管理、动态调整</p>
 </blockquote>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>现在进入正题，这样的RPC到底是什么样的呢，我们来用一张图展示<br><img src="第一篇正文：关于中间件/Dubbo2.png" width="80%" height="80%"></p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>现在进入正题，这样的RPC到底是什么样的呢，我们来用一张图展示<br><img src="Dubbo2.png" width="80%" height="80%"></p>
 <blockquote>
 <p>Dubbo的特点：连通性、健壮性、伸缩性、向未来架构的升级性。</p>
 </blockquote>
@@ -553,7 +557,7 @@ Zookeeper详谈
 <li>服务提供者宕掉任一台，不影响使用</li>
 </ul>
 <h3 id="伸缩性"><a href="#伸缩性" class="headerlink" title="伸缩性"></a>伸缩性</h3><p>注册中心为对等集群，可动态增加机器部署实例，所有<br>客户端将自动发现新注册中心。<br>    服务提供者无状态，可动态增加机器部署实例，注册中<br>心将推送新的服务提供者信息给消费者。</p>
-<h3 id="升级性"><a href="#升级性" class="headerlink" title="升级性"></a>升级性</h3><p>即从分布式架构到流动计算架构，如图。<br><img src="第一篇正文：关于中间件/流动计算架构.png" width="100%" height="100%"><br><strong>存放中心</strong>（Repository）：<br>存储服务应用发布包<br><strong>调度中心</strong>（Scheduler）：<br>基于访问压力自动增减服务提供者<br><strong>管理台</strong>（Admin）：<br>统一管理控制台<br><strong>部署者</strong>（Deployer）:<br>自动部署服务的本地代理</p>
+<h3 id="升级性"><a href="#升级性" class="headerlink" title="升级性"></a>升级性</h3><p>即从分布式架构到流动计算架构，如图。<br><img src="流动计算架构.png" width="100%" height="100%"><br><strong>存放中心</strong>（Repository）：<br>存储服务应用发布包<br><strong>调度中心</strong>（Scheduler）：<br>基于访问压力自动增减服务提供者<br><strong>管理台</strong>（Admin）：<br>统一管理控制台<br><strong>部署者</strong>（Deployer）:<br>自动部署服务的本地代理</p>
 <h2 id="注册中心"><a href="#注册中心" class="headerlink" title="注册中心"></a>注册中心</h2><blockquote>
 <p>注册中心是框架中的核心部分，用于服务的注册与发现，高效、可扩展、高鲁棒性的注册中心会使得框架更加强大</p>
 </blockquote>
@@ -564,9 +568,9 @@ Zookeeper详谈
 <li>Simple注册中心</li>
 </ul>
 <p>下面是粗浅的对比</p>
-<h3 id="Muticast注册中心"><a href="#Muticast注册中心" class="headerlink" title="Muticast注册中心"></a>Muticast注册中心</h3><p>适用于小规模应用，广播完成互发现，其开发最为便捷，但由于对信道依赖过大，使得其局限性不言而喻。下图为Multicast的原理示意图：<br><img src="第一篇正文：关于中间件/Multicast.png" width="100%" height="100%"></p>
+<h3 id="Muticast注册中心"><a href="#Muticast注册中心" class="headerlink" title="Muticast注册中心"></a>Muticast注册中心</h3><p>适用于小规模应用，广播完成互发现，其开发最为便捷，但由于对信道依赖过大，使得其局限性不言而喻。下图为Multicast的原理示意图：<br><img src="Multicast.png" width="100%" height="100%"></p>
 <h3 id="Zookeeper注册中心"><a href="#Zookeeper注册中心" class="headerlink" title="Zookeeper注册中心"></a>Zookeeper注册中心</h3><p>阿里巴巴Dubbo项目推荐注册中心，其采用树形目录，工业强度高，可用于生产环境，但仍有需注意的问题，后面讲详谈。</p>
-<h3 id="Redis注册中心"><a href="#Redis注册中心" class="headerlink" title="Redis注册中心"></a>Redis注册中心</h3><p>Key/Map结构，Pub/Sub（即请求应答模式）通知服务数据变更。下图展示其结构。<br><img src="第一篇正文：关于中间件/Redis.png" width="100%" height="100%"></p>
+<h3 id="Redis注册中心"><a href="#Redis注册中心" class="headerlink" title="Redis注册中心"></a>Redis注册中心</h3><p>Key/Map结构，Pub/Sub（即请求应答模式）通知服务数据变更。下图展示其结构。<br><img src="Redis.png" width="100%" height="100%"></p>
 <h3 id="Simple注册中心"><a href="#Simple注册中心" class="headerlink" title="Simple注册中心"></a>Simple注册中心</h3><p>Simple注册中心本身就是一个普通的Dubbo服务，可以减少第三方依赖，使整体通讯方式一致。</p>
 <h1 id="Zookeeper详谈"><a href="#Zookeeper详谈" class="headerlink" title="Zookeeper详谈"></a>Zookeeper详谈</h1><blockquote>
 <p>先来了解一下Zookeeper的架构和基础</p>
@@ -581,19 +585,19 @@ Zookeeper详谈
 <h2 id="Zookeeper架构"><a href="#Zookeeper架构" class="headerlink" title="Zookeeper架构"></a>Zookeeper架构</h2><blockquote>
 <p>架构图入下：</p>
 </blockquote>
-<img src="第一篇正文：关于中间件/ZooKeeper架构.png" width="70%" height="70%">
+<img src="ZooKeeper架构.png" width="70%" height="70%">
 **Client**：从zookeeper服务器获取信息的分布式集群中节点。
 **Server**：zookeeper中的节点，为客户端提供多有服务（注册，发现等）
 **Ensemble**：服务组，形成Zookeeper服务组至少三个节点。
 **Leader**：启动时自动选举，负责写操作。
 **Follower**：跟随leader指令的服务器节点。
 ## 层次命名空间
-<img src="第一篇正文：关于中间件/zname.png" width="60%" height="60%">
+<img src="zname.png" width="60%" height="60%">
 **/**（根目录）
 **/config**：用于集中式配置管理
 **/workers**:用于命名
 ZooKeeper数据模型中的每个znode都维护着一个 stat 结构。一个stat仅提供一个znode的元数据。它由版本号，操作控制列表(ACL)，时间戳和数据长度组成。
-<img src="第一篇正文：关于中间件/znode.jpg" width="60%" height="60%">
+<img src="znode.jpg" width="60%" height="60%">
 ## 会话
 >客户端连接到服务器，将建立会话并向客户端分配会话ID。
 客户端以特定的时间间隔发送心跳以保持会话有效。如果ZooKeeper集合在超过服务器开启时指定的期间（会话超时）都没有从客户端接收到心跳，则它会判定客户端死机。
@@ -601,7 +605,7 @@ ZooKeeper数据模型中的每个znode都维护着一个 stat 结构。一个sta
 ## 监视
 >用一张图来展示
 
-<img src="第一篇正文：关于中间件/watch.png" width="100%" height="100%">
+<img src="watch.png" width="100%" height="100%">
 ## 沉思
 >阿里Dubbo官方文档末尾：阿里内部并没有采用Zookeeper做为注册中心，而是使用自己实现的基于数据库的注册中心。
 
@@ -609,11 +613,11 @@ ZooKeeper数据模型中的每个znode都维护着一个 stat 结构。一个sta
 <p><strong>CAP</strong>（consistency availability Partition tolerance）：<br>数据同步（一致性）<br>任何时候，任何应用程序都可读写数据（可用性）、分区容忍性（可靠性）<br><strong><em>定理</em></strong>：任何分布式系统只可同时满足两点，没有办法三者兼顾</p>
 <p><strong>ACID</strong>：<br>Atomicity原子性（事务全完成/全不完成）  Consistency 一致性（事务开始或结束时一致）<br>lsolation隔离层（事务只有自己在操作数据库） Durability持久性（事务完成不能返回）</p>
 <p><strong>BASE</strong>：反ACID模型，牺牲高一致性<br>Basically Available（基本可用）支持分区失败<br>Soft state：（软状态）状态可以有一段时间不同步<br>Eventually consistent（最终一致）数据最终保持一致</p>
-<h3 id="注册中心是AP还是CP系统"><a href="#注册中心是AP还是CP系统" class="headerlink" title="注册中心是AP还是CP系统"></a>注册中心是AP还是CP系统</h3><p>先来看看AP会发生什么<br><img src="第一篇正文：关于中间件/AP.png" width="100%" height="100%"></p>
+<h3 id="注册中心是AP还是CP系统"><a href="#注册中心是AP还是CP系统" class="headerlink" title="注册中心是AP还是CP系统"></a>注册中心是AP还是CP系统</h3><p>先来看看AP会发生什么<br><img src="AP.png" width="100%" height="100%"></p>
 <blockquote>
 <p>这样可能会发生的事情就是，在一个时段内，S1收到的是{<strong>ip1</strong> ip2 ip3 ip4 ip5}，而S2收到的是{ip2 ip3 ip4 ip5 <strong>ip6</strong>}，这是舍弃一致性的结果。但是，在分布式系统中，即使是对等部署的服务，因为请求到达的时间，硬件的状态，操作系统的调度，虚拟机的 GC 等，任何一个时间点，这些对等部署的节点状态也不可能完全一致，而流量不一致的情况下，只要注册中心在SLA承诺的时间内（例如1s内）将数据收敛到一致状态（即满足最终一致），流量将很快趋于统计学意义上的一致，所以注册中心以最终一致的模型设计在生产实践中完全可以接受。</p>
 </blockquote>
-<p>再来看看CP会发生什么<br><img src="第一篇正文：关于中间件/CP.png" width="100%" height="100%"></p>
+<p>再来看看CP会发生什么<br><img src="CP.png" width="100%" height="100%"></p>
 <blockquote>
 <p>虽然整体 ZooKeeper 服务是可用的，但是节点ZK5是不可写的，因为联系不上 Leader。</p>
 </blockquote>
@@ -621,7 +625,7 @@ ZooKeeper数据模型中的每个znode都维护着一个 stat 结构。一个sta
 <blockquote>
 <p><strong>注册中心不能因为自身的任何原因破坏服务之间本身的可连通性，这是注册中心设计应该遵循的铁律</strong></p>
 </blockquote>
-<h3 id="服务规模、容量、服务连通性"><a href="#服务规模、容量、服务连通性" class="headerlink" title="服务规模、容量、服务连通性"></a>服务规模、容量、服务连通性</h3><p>Zookeeper通过leader来进行写操作，读则通过消费者在注册中心获取服务地址列表后直接建立连接（并实时检测健康度）<br>因此，注册中心压力来源为下图：<br><img src="第一篇正文：关于中间件/压力来源.png" width="80%" height="80%"></p>
+<h3 id="服务规模、容量、服务连通性"><a href="#服务规模、容量、服务连通性" class="headerlink" title="服务规模、容量、服务连通性"></a>服务规模、容量、服务连通性</h3><p>Zookeeper通过leader来进行写操作，读则通过消费者在注册中心获取服务地址列表后直接建立连接（并实时检测健康度）<br>因此，注册中心压力来源为下图：<br><img src="压力来源.png" width="80%" height="80%"></p>
 <blockquote>
 <p>这一问题的解决方案：垂直划分业务层，各业务使用各自的zookeeper注册中心<br>（但各业务一定老死不相往来吗，这再一次破坏了连通性铁律）</p>
 </blockquote>
