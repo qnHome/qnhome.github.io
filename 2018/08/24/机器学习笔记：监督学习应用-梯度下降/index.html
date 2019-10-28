@@ -453,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-10-27
+                    2019-10-28
                 </div>
                 
 
@@ -484,7 +484,7 @@
 <p>那么我们如何去求得这个$\theta$值呢。我们可在不断地最小化误差的过程中，取得$\theta$的值（当然这里还要考虑过拟合、欠拟合、样本噪声，提取特征等一系列问题，先做初步了解）。<br>$$\min_\theta\mathtt{J}(\theta)=\min_\theta\frac{1}{2}\sum_{i=0}^m\left(\mathtt{h}_\theta(x^{(i)})-\mathtt{y}^{(i)}\right)^2$$</p>
 <h1 id="求解算法"><a href="#求解算法" class="headerlink" title="求解算法"></a>求解算法</h1><p>下面来讲述如何去求解这个最小化问题</p>
 <h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2><p>“start with some $\theta$.(Say $\theta=\vec0$).Keep changing $\theta$ to reduce $J(\theta)$”<br>其实这一过程就是穷举法，通俗地讲就是逐个尝试，从0（或随机一个值）带入参数，得到的结果最小，那么就是参数的选取值。</p>
-<h2 id="批梯度下降法（batch-gradient-descent）"><a href="#批梯度下降法（batch-gradient-descent）" class="headerlink" title="批梯度下降法（batch gradient descent）"></a>批梯度下降法（batch gradient descent）</h2><p>最为代表的一句“如果我想下山，那么我往哪个方向走最快”，即三维空间中（只有两个参数的情况下）梯度下降就像在这个不规则曲面上找最小一点，也就是误差最小点（这里要考虑梯度消失、梯度爆炸的情况，涉及权值共享等方法，这些内容读者可自行查阅，或者在之后的笔记中会有详解）<br>$\theta$初始化为$\vec0$或堆积产生的$\theta$。更新$\theta$的方法如下：<br>$$\theta_i:=\theta_i-\alpha\frac{\partial}{\partial\theta_i}\mathtt{J}(\theta)$$<br>“$:=$”为赋值号，即将右边的值赋值给左边的变量<br>对于这个式子的求导过程不再详述，非常简单的过程，请读者一定要亲自计算一遍，对后面的学习有很大帮助。<br>结果为(只有一个训练样本的计算结果)：<br>$$\theta_i:=\theta_i-\alpha(\mathtt{h}<em>{\theta}(x)-\mathtt{y})\cdot x$$<br> $\alpha$控制了“迈出步子”的大小（通常$\alpha$的值是手动设置的，值过大则会越过最小值，值过小则影响效率）<br> 一般化到多个样本中公式为：<br> $$\theta_i=\theta_i-\alpha\sum</em>{j=1}^m(\mathtt{h}<em>{\theta}(x^{(j)})-\mathtt{y}^{(j)})\cdot x_i^{(j)}$$<br> $\sum</em>{j=1}^m(\mathtt{h}_{\theta}(x^{(j)})-\mathtt{y}^{(j)})\cdot x_i^{(j)}$即为$\frac{\partial}{\partial\theta_i}\mathtt{J}(\theta)$的结果</p>
+<h2 id="批梯度下降法（batch-gradient-descent）"><a href="#批梯度下降法（batch-gradient-descent）" class="headerlink" title="批梯度下降法（batch gradient descent）"></a>批梯度下降法（batch gradient descent）</h2><p>最为代表的一句“如果我想下山，那么我往哪个方向走最快”，即三维空间中（只有两个参数的情况下）梯度下降就像在这个不规则曲面上找最小一点，也就是误差最小点（这里要考虑梯度消失、梯度爆炸的情况，涉及权值共享等方法，这些内容读者可自行查阅，或者在之后的笔记中会有详解）<br>$\theta$初始化为$\vec0$或堆积产生的$\theta$。更新$\theta$的方法如下：<br>$$\theta_i:=\theta_i-\alpha\frac{\partial}{\partial\theta_i}\mathtt{J}(\theta)$$<br>“$:=$”为赋值号，即将右边的值赋值给左边的变量<br>对于这个式子的求导过程不再详述，非常简单的过程，请读者一定要亲自计算一遍，对后面的学习有很大帮助。<br>结果为(只有一个训练样本的计算结果)：<br>$$<br>\theta_i := \theta_i-\alpha(\mathtt{h}<em>{\theta}(x)-\mathtt{y})\cdot x<br>$$<br> $ \alpha $控制了“迈出步子”的大小（通常$ \alpha $的值是手动设置的，值过大则会越过最小值，值过小则影响效率）<br> 一般化到多个样本中公式为：<br> $$\theta_i=\theta_i-\alpha\sum</em>{j=1}^m(\mathtt{h}<em>{\theta}(x^{(j)})-\mathtt{y}^{(j)})\cdot x_i^{(j)}$$<br> $\sum</em>{j=1}^m(\mathtt{h}_{\theta}(x^{(j)})-\mathtt{y}^{(j)})\cdot x_i^{(j)}$即为$\frac{\partial}{\partial\theta_i}\mathtt{J}(\theta)$的结果</p>
 <h2 id="随机梯度下降算法（stochastic-gradient-descent）"><a href="#随机梯度下降算法（stochastic-gradient-descent）" class="headerlink" title="随机梯度下降算法（stochastic gradient descent）"></a>随机梯度下降算法（stochastic gradient descent）</h2><p> 当$m$的值过大，每走一步就要遍历一遍训练集时，可想而知其运行效率，尤其数据集高达亿级时，处理一亿个数据求和还未能完成第一步，这时我们就要考虑随机梯度下降算法（增量梯度下降法）了。</p>
 <blockquote>
 <p>repeat{for j=1 to m{<br>$$\theta_i=\theta_i-\alpha(\mathtt{h}_{\theta}(x^{(j)})-\mathtt{y}^{(j)})\cdot x_i^{(j)}$$</p>
