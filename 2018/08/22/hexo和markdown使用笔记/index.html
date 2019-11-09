@@ -35,7 +35,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -469,31 +469,28 @@
 <li>删除线</li>
 <li>下划线</li>
 </ul>
-<h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**这里是需加粗文字**</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><pre><code>**这里是需加粗文字**</code></pre><blockquote>
 <p><strong>效果</strong></p>
 </blockquote>
-<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*这里是需斜体文字*</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><pre><code>*这里是需斜体文字*</code></pre><blockquote>
 <p><em>效果</em></p>
 </blockquote>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~这里是需加删除线文字~~</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><pre><code>~~这里是需加删除线文字~~</code></pre><blockquote>
 <p><del>效果</del></p>
 </blockquote>
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;这里是需下划线文字&lt;/u&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><pre><code>&lt;u&gt;这里是需下划线文字&lt;/u&gt;</code></pre><blockquote>
 <p><u>效果</u></p>
 </blockquote>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这是最常用的标签 #[null]</span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">以此类推</span><br><span class="line">######六级标题</span><br></pre></td></tr></table></figure>
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">三个连续的-</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><pre><code>这是最常用的标签 #[null]
+# 一级标题
+## 二级标题
+以此类推
+######六级标题</code></pre><h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><pre><code>三个连续的-</code></pre><blockquote>
 <p>效果如下</p>
 </blockquote>
 <hr>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由三个连续的 ` 包围</span><br></pre></td></tr></table></figure>
-<h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 普通序列</span><br><span class="line">1. 数字序列</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>由三个连续的 ` 包围</code></pre><h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><pre><code>- 普通序列
+1. 数字序列</code></pre><blockquote>
 <p>效果1：普通序列</p>
 </blockquote>
 <ul>
@@ -512,12 +509,18 @@
 <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><blockquote>
 <p>markdown支持HTML嵌入<br>如下代码：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<html>
+<pre><code>&lt;html&gt;
+&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;
+&lt;/html&gt;</code></pre><html>
 <a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a>
 </html>
 # 表格
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header 1 | header 2</span><br><span class="line">---|---</span><br><span class="line">row 1 col 1 | row 1 col 2</span><br><span class="line">row 2 col 1 | row 2 col 2</span><br></pre></td></tr></table></figure>
+```
+header 1 | header 2
+---|---
+row 1 col 1 | row 1 col 2
+row 2 col 1 | row 2 col 2
+```
 >效果如下
 
 <table>
@@ -539,23 +542,25 @@
 <h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><blockquote>
 <p>普通代码块</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">alert(&quot;hello world&quot;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure>
+<pre><code>{% codeblock %}
+alert("hello world");
+{% endcodeblock %}</code></pre><pre><code>alert(&quot;hello world&quot;);</code></pre>
 
 <blockquote>
 <p>指定语言</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock lang:javascript %&#125;</span><br><span class="line">alert(&quot;hello world&quot;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code>{% codeblock lang:javascript %}
+alert("hello world");
+{% endcodeblock %}</code></pre><pre><code>alert(&quot;hello world&quot;);</code></pre>
 
 <blockquote>
 <p>附加说明和网址</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock 弹出提示窗 http://www.baidu.com 链接到百度 lang:javascript %&#125;</span><br><span class="line">alert(&quot;hello world&quot;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><figcaption><span>弹出提示窗</span><a href="http://www.baidu.com" target="_blank" rel="noopener">链接到百度</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"hello world"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code>{% codeblock 弹出提示窗 http://www.baidu.com 链接到百度 lang:javascript %}
+alert("hello world");
+{% endcodeblock %}</code></pre><pre><code>alert(&quot;hello world&quot;);</code></pre>
 
-<h1 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![这是图片提示](test.jpg)</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h1 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h1><pre><code>![这是图片提示](test.jpg)</code></pre><blockquote>
 <p>引入图片如下</p>
 </blockquote>
 <p><img src="test.jpg" alt="这是图片提示"></p>
@@ -716,8 +721,7 @@ Zookeeper详谈
                     <div class="summary block-with-text">
                         
                             很简单，就一条命令，不用修改DNS
-1sudo teamviewer --daemon enable
-
+sudo teamviewer --daemon enable
                         
                     </div>
                     <div class="publish-info">

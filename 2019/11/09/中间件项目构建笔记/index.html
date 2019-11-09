@@ -19,7 +19,7 @@ UI：iview
 基本语言：c++
 编译环境：cmake
 
-前端记录##环境安装第一步：安装必要的环境">
+前端记录环境安装第一步：安装必要的环境（f">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -40,7 +40,7 @@ UI：iview
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -479,11 +479,12 @@ UI：iview
 <li>基本语言：c++</li>
 <li>编译环境：cmake</li>
 </ul>
-<h1 id="前端记录"><a href="#前端记录" class="headerlink" title="前端记录"></a>前端记录</h1><p>##环境安装<br>第一步：安装必要的环境（ffi为不同语言间调用工具）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">sudo npm install -g prebuild node-gyp electron</span><br><span class="line">npm install ffi bindings --save</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<p>第二步：重新编译ref/ffi（c++端使用<img src="http://nodejs.cn/api/addons.html" alt="nan链接">）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/atom-shell</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
+<h2 id="前端记录"><a href="#前端记录" class="headerlink" title="前端记录"></a>前端记录</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>第一步：安装必要的环境（ffi为不同语言间调用工具）</p>
+<pre><code>sudo npm install -g prebuild node-gyp electron
+npm install ffi bindings --save</code></pre><p>第二步：重新编译ref/ffi（c++端使用<html><a href="http://nodejs.cn/api/addons.html" target="_blank" rel="noopener">nan</a></html>进行链接）</p>
+<pre><code>
+node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/atom-shell
+</code></pre><blockquote>
 <p>运行流程：</p>
 </blockquote>
 <ol>
@@ -603,7 +604,7 @@ UI：iview
 基本语言：c++
 编译环境：cmake
 
-前端记录##环境安装第一步：安装必要的环境
+前端记录环境安装第一步：安装必要的环境（f
                         
                     </div>
                     <div class="publish-info">
