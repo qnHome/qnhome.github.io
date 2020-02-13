@@ -4,22 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="中间件项目构建笔记, nxHome">
-    <meta name="description" content="中间件项目构建笔记
+    <meta name="keywords" content="中间件笔记, nxHome">
+    <meta name="description" content="
+本文记录中间件项目的学习历程，包括在项目实施过程中的经验总结。
 
-就近期搭建的中间件项目记录框架、环境以及踩过的坑
-
-前端：
-
-基本框架：electron+vue.js
-UI：iview
-
-后端：
-
-基本语言：c++
-编译环境：cmake
-
-前端记录环境安装第一步：安装必要的环境（f">
+论文：Middleware for Internet of Things a Survey基于虚拟机的中间件
+该类中间件，通过虚拟化的基础架构，为用户应用程序的安全执行环境">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +17,7 @@ UI：iview
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>中间件项目构建笔记 | nxHome</title>
+    <title>中间件笔记 | nxHome</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -296,13 +286,13 @@ UI：iview
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        中间件项目构建笔记
+                        中间件笔记
                     </div>
                 </div>
             </div>
@@ -442,14 +432,9 @@ UI：iview
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-09
+                    2020-02-13
                 </div>
                 
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-11
-                </div>
                 
 
                 
@@ -465,51 +450,24 @@ UI：iview
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="中间件项目构建笔记"><a href="#中间件项目构建笔记" class="headerlink" title="中间件项目构建笔记"></a>中间件项目构建笔记</h1><hr>
-<blockquote>
-<p>就近期搭建的中间件项目记录<strong>框架</strong>、<strong>环境</strong>以及踩过的<strong>坑</strong></p>
+                <blockquote>
+<p>本文记录中间件项目的学习历程，包括在项目实施过程中的经验总结。</p>
 </blockquote>
-<p>前端：</p>
-<ul>
-<li>基本框架：electron+vue.js</li>
-<li>UI：iview</li>
-</ul>
-<p>后端：</p>
-<ul>
-<li>基本语言：c++</li>
-<li>编译环境：cmake</li>
-</ul>
-<h2 id="前端记录"><a href="#前端记录" class="headerlink" title="前端记录"></a>前端记录</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>第一步：安装必要的环境（ffi为不同语言间调用工具）</p>
-<pre><code>sudo npm install -g prebuild node-gyp electron
-npm install ffi bindings --save</code></pre><p>第二步：重新编译ref/ffi（c++端使用<html><a href="http://nodejs.cn/api/addons.html" target="_blank" rel="noopener">nan</a></html>进行链接）</p>
-<pre><code>
-node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/atom-shell
-</code></pre><blockquote>
-<p>运行流程：</p>
+<h1 id="论文：Middleware-for-Internet-of-Things-a-Survey"><a href="#论文：Middleware-for-Internet-of-Things-a-Survey" class="headerlink" title="论文：Middleware for Internet of Things a Survey"></a>论文：Middleware for Internet of Things a Survey</h1><h2 id="基于虚拟机的中间件"><a href="#基于虚拟机的中间件" class="headerlink" title="基于虚拟机的中间件"></a>基于虚拟机的中间件</h2><blockquote>
+<p>该类中间件，通过虚拟化的基础架构，为用户应用程序的安全执行环境提供了编程支持。</p>
 </blockquote>
+<img src="VM.jpg" width="80%" height="80%">
+
 <ol>
-<li>npm install</li>
-<li>node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=<a href="https://atom.io/download/atom-shell" target="_blank" rel="noopener">https://atom.io/download/atom-shell</a></li>
-<li>npm start</li>
+<li>网络中的每个节点都拥有一个VM，用于解析该节点的消息。</li>
+<li>这种方法通常用于解决缺乏架构支持的问题，同时支持分布式异构物联网基础设施的透明性。</li>
 </ol>
-<h2 id="后端记录"><a href="#后端记录" class="headerlink" title="后端记录"></a>后端记录</h2><p>###c++环境配置</p>
-<blockquote>
+<p>VM 分为两类：</p>
 <ul>
-<li>语言：c++</li>
+<li>中间件级别的VM（操作系统和应用程序之间）</li>
+<li>系统级别的VM（替代或替换整个OS）</li>
 </ul>
-</blockquote>
-<ul>
-<li>IDE: eclipse CDT</li>
-<li>环境 cmake+ninja</li>
-</ul>
-<ol>
-<li><p>eclipse配置cmake需要在windows-&gt;preferences-&gt;cmake中配置cmake路径<br><code>/usr/bin/cmake  //where cmake查找</code></p>
-</li>
-<li><p>配置ninja</p>
-</li>
-</ol>
-<p>首先加入cmake-qt-gui，可以用于配置cmake缓存<code>sudo apt-get install cmake-qt-gui</code></p>
-<p>然后安装ninja-build<br><code>sudo apt-get install ninja-build</code></p>
+<p>中间件级别的VM为底层操作系统增加了功能（并发）；系统级别的VM释放了操作系统原本会消耗的资源。</p>
 
             </div>
             <hr/>
@@ -570,7 +528,7 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
         repo: 'gitTalk',
         owner: 'qnHome',
         admin: "qnHome",
-        id: '2019-11-09T18-54-06',
+        id: '2020-02-13T15-59-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -591,9 +549,10 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/02/13/%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
@@ -615,9 +574,9 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -630,6 +589,7 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -652,32 +612,45 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/08/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/">
+                <a href="/2019/11/09/%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="机器学习笔记：监督学习应用-梯度下降">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="中间件项目构建笔记">
                         
-                        <span class="card-title">机器学习笔记：监督学习应用-梯度下降</span>
+                        <span class="card-title">中间件项目构建笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前言第一课是机器学习的动机与应用观看后不再进行记录，多为介绍吴恩达老师和研究生的研究领域，以及一些机器学习的背景常识，博主已经读过周志华老师的《机器学习》书籍，已有对机器学习内容的基本了解，因此不再针对背景和太基本内容进行总结，直接记录干
+                            中间件项目构建笔记
+
+就近期搭建的中间件项目记录框架、环境以及踩过的坑
+
+前端：
+
+基本框架：electron+vue.js
+UI：iview
+
+后端：
+
+基本语言：c++
+编译环境：cmake
+
+前端记录环境安装第一步：安装必要的环境（f
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    机器学习基础
+                            <a href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/" class="post-category">
+                                    笔记本
                                 </a>
                             
                             
@@ -687,8 +660,12 @@ node-gyp rebuild -target=v7.1.0 -arch=x64 -dist-url=https://atom.io/download/ato
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                        <span class="chip bg-color">中间件</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">
+                        <span class="chip bg-color">项目搭建</span>
                     </a>
                     
                 </div>
